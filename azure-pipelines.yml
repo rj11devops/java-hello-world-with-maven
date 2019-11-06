@@ -23,5 +23,7 @@ steps:
 
 - task: CmdLine@2
   inputs:
-    script: 'java -jar $(agent.builddirectory)\s\target\*.jar'
+    script: dir $(Build.ArtifactStagingDirectory)
+    script: dir $(Build.BinariesDirectory)
+    script: 'java -jar $(Build.ArtifactStagingDirectory)\*.jar'
 
