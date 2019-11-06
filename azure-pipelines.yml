@@ -23,5 +23,5 @@ steps:
 
 - task: CmdLine@2
   inputs:
-    script: 'java -jar $(agent.builddirectory)\*.jar'
+    script: 'java -jar D:\a\1\s\target\jb-hello-world-maven-0.1.0.jar'
 
