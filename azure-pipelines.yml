@@ -23,13 +23,5 @@ steps:
 
 - task: CmdLine@2
   inputs:
-    script: dir $(Build.ArtifactStagingDirectory)
-
-- task: CmdLine@2
-  inputs:
-    script: dir $(Build.BinariesDirectory)
-
-- task: CmdLine@2
-  inputs:
-    script: 'java -jar $(Build.ArtifactStagingDirectory)\*.jar'
+    script: 'java -jar $(Build.ArtifactStagingDirectory)\..\s\target\*.jar'
 
