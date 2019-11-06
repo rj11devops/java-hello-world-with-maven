@@ -23,4 +23,5 @@ steps:
 
 - task: CmdLine@2
   inputs:
-    script: 'java -jar /home/vsts/work/1/s/target/*.jar'
+    script: 'java -jar $(Build.ArtifactStagingDirectory)/*.jar'
+
