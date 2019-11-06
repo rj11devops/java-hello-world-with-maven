@@ -20,8 +20,11 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
-
-- task: CmdLine@2
+- task: AzureRmWebAppDeployment@4
   inputs:
-    script: 'java -jar $(Build.ArtifactStagingDirectory)\..\s\target\*.jar'
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Free Trial(5c139396-2d1b-45f6-b2f4-2f6fedd1b78a)'
+    appType: 'webApp'
+    WebAppName: 
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
 
